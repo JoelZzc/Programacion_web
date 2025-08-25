@@ -1,7 +1,7 @@
 ## Programación web I
 
 
-![This is an alt text.](/image/https://www.google.com/url?sa=i&url=https%3A%2F%2Fbiblio.uabcs.mx%2F&psig=AOvVaw0OmVSAVJyCJBRIl1UgjMjt&ust=1756248912312000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMDswJeHp48DFQAAAAAdAAAAABAU"Logo uabcs.")
+![This is an alt text.](/image/https://www.google.com/url?sa=i&url=https%3A%2F%2Fbiblio.uabcs.mx%2F&psig=AOvVaw0OmVSAVJyCJBRIl1UgjMjt&ust=1756248912312000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMDswJeHp48DFQAAAAAdAAAAABAU "Logo uabcs.")
 
 ## Ejercicios
 
