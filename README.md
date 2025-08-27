@@ -3,7 +3,7 @@
 
 ### HTML
 
-* [01: HTML básico y formato de contenido](/html/)
+* [01: Página web con elementos básicos](/html/ejercicio1.html)
 * 
 * 
 * 
