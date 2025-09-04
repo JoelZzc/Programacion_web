@@ -4,8 +4,8 @@
 ### HTML
 
 * [01: Página web con elementos básicos](/html/ejercicio1.html)
-* 
-* 
+* [02: Actualización de la pagina web](/html/ejercicio1.html)
+* [03: Formulario y Metadatos](/html/ejercicio3.html)
 * 
 
 ### CSS
