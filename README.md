@@ -10,7 +10,7 @@
 
 ### CSS
 
-* 
+* [01:  Formato de texto, fuentes, fondos y border](/html/css_ejercicio1.html)
 * 
 * 
 * 
