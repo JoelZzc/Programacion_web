@@ -13,7 +13,8 @@
 * [01:  Formato de texto, fuentes, fondos y border](/html/css_ejercicio1.html)
 * [02:  Tarjeta](/html/css_ejercicio2.html)
 * [03:  Header sticky](/html/web_site.html)
-* 
+* [04:  Formulario con estilos, pseudoelementos y pseudoclases](/html/formulario.html)
+
 
 ### JavaScript
 
