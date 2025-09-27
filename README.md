@@ -14,7 +14,8 @@
 * [02:  Tarjeta](/html/css_ejercicio2.html)
 * [03:  Header sticky](/html/web_site.html)
 * [04:  Formulario con estilos, pseudoelementos y pseudoclases](/html/formulario.html)
-
+* [05:  Sitio con tarjetas (Flex)](/html/web_site.html)
+* [06:  Sitio con tarjetas (Flex)](/html/web_site.html)
 
 ### JavaScript
 

@@ -1,3 +1,13 @@
+:root {
+    --main-color: white;
+    --secondary-color:#191a1f;
+    --details-color:#8B1E3F;
+    --border-color: gray;
+
+    --base-padding: 10px;
+    --max-width-card:10%;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -25,7 +35,7 @@ a {
 
 .menu li {
     position: relative;
-    padding: 0 20px;
+    padding: 0 calc(var(--base-padding)*2);
 }
 
 .accessory-submenu {
@@ -33,18 +43,18 @@ a {
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
+    background: var(--main-color);
     width: 140px;
     z-index: 110;
     padding: 0;
     margin: 0;
-    box-shadow: 2px 2px 5px 0 gray;
+    box-shadow: 2px 2px 5px 0 var(--border-color);
     list-style: none;
 }
 
 .accessory-submenu li {
     display: block;
-    padding: 10px;
+    padding: var(--base-padding);
 }
 
 li:hover .accessory-submenu {
@@ -56,13 +66,13 @@ li:hover .accessory-submenu {
 }
 
 .section-group-header #link-top{
-    color: white;
+    color: var(--main-color);
 }
 .section-group-header {
     font-size: 14px;
-    color: white;
+    color: var(--main-color);
     font-style: normal;
-    background-color: rgba(25, 26,31    );
+    background-color: var(--secondary-color);
     text-align: center;
     height: 38px;
     line-height: 38px;
@@ -70,19 +80,19 @@ li:hover .accessory-submenu {
 
 .section-group-link{
     box-shadow: 0 -1px 1px rgb(0,0,0,0.2);
-    background-color: white;
+    background-color: var(--main-color);
     height: 60px;
     line-height: 60px;
 }
 
 .link {
-    color: black;
+    color: var(--secondary-color);
     text-decoration: none;
     font-weight: bold;
 }
 
 #link-ofert {
-    color: #8B1E3F;
+    color: var(--details-color);
 }
 
 .section-search {
@@ -114,7 +124,7 @@ li:hover .accessory-submenu {
 .header-sticky {
     position: sticky;
     top: 0;
-    background-color: white;
+    background-color: var(--main-color);
     z-index: 100;
 }
 
@@ -132,12 +142,12 @@ li:hover .accessory-submenu {
 
 .card-accessory {
     display: flex;
-    max-width: 10%;
+    max-width: var(--max-width-card);
     flex-direction: column;
     align-items: center;
     min-width: 200px;
     padding: 5%;
-    box-shadow: 2px 2px 10px lightgray;
+    box-shadow: 2px 2px 10px var(--border-color);
 }
 
 .card-img {
