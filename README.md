@@ -17,6 +17,7 @@
 * [05:  Sitio con tarjetas (Flex)](/html/web_site.html)
 * [06:  Variables y funciones](/html/web_site.html)
 * [07:  CSS Grid](/html/web_site.html)
+* [08:  Sitio responsivo](/html/web_site.html)
 
 ### JavaScript
 

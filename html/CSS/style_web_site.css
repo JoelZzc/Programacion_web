@@ -164,6 +164,72 @@ li:hover .accessory-submenu {
     margin-bottom: 5%;
 }
 
+.menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    display: none;
+    position: absolute;
+    top: 3rem;
+    left: 0.3rem;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-weight: bold;
+    z-index: 200;   
+}
+
+@media (max-width: 375px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .section-group-link {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 100%;
+        background: white;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+        padding-top: 60px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 150;
+    }
+
+    .menu-toggle:checked ~ .section-group-link {
+        transform: translateX(0);
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu li {
+        padding: 15px;
+    }
+    
+    .section-container-accessories {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .card-accessory {
+        max-width: 100%;
+        min-width: auto;
+    }
+
+    .section-search .user {
+        position:fixed;
+        margin-top: 9px;
+        margin-left: 30px;
+    }
+
+}
 
 
 
