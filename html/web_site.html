@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/style_web_site.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
 </head>
 <body>
     
@@ -19,7 +21,7 @@
         </div>
 
         <div class="section-search"> 
-            <input type="text" placeholder="Buscar un nuevo instrumento">
+            <input class="form-control" type="text" placeholder="Buscar un nuevo instrumento">
             <img class="user" src="multimedia/usuario (1).png" alt="usuario">
         </div>
 
@@ -45,11 +47,23 @@
     </header>
 
     <main>
+        <section class="section-announcement-background">
+            <img class="background-img" src="multimedia/background.png" alt="background">
+            <div class="background-content">
+                <h3>Nuevo modelo</h3>
+                <h1>Squier Classic Vibe</h1>
+                <p>Guitarra con diseño clasico que brinda un tono totalmente autentico </p>
+                <button class="btn btn-light">Comprar ahora</button>
+            </div>
+        </section>
+
         <h2 class="accessory-title">Accesorios</h2>
         <section class="section-container-accessories">
             <div class="card-accessory">
-                <img class="card-img" src="multimedia/Correa_guitarra.jpg" alt="Correa">
-                <p class="card-description">Ernie Ball Jacquard Correa para guitarra - Regal Black</p>
+                <a class="link" href="web_site_article_page.html">
+                    <img class="card-img" src="multimedia/Correa_guitarra.jpg" alt="Correa">
+                    <p class="card-description">Ernie Ball Jacquard Correa para guitarra - Regal Black</p>
+                </a>
             </div>
 
             <div class="card-accessory">
@@ -72,6 +86,7 @@
 
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
 </body>
 </html>
