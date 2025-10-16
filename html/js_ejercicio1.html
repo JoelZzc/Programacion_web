@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <h1>hola</h1>
+    
+</body>
+<script>
+    function calculadora(num1, num2, operacion){
+        let resultado;
+
+        switch(operacion){
+            case "suma":
+                resultado= num1 + num2;
+                console.log("La suma es " + resultado);
+                break;
+
+            case "resta":
+                resultado= num1 - num2;
+                console.log("La resta es " + resultado);
+                break;
+
+            case "multiplicacion":
+                resultado= num1 * num2;
+                console.log("La multiplicacion es " + resultado);
+                break;  
+
+            case "division":
+                if(num2 !== 0){
+                    resultado= num1/num2;
+                    console.log("La division es " + resultado);
+                }else{
+                    console.log("Error... no se puede dividir entre 0");
+                }
+                break;
+
+            default:
+                console.log("Error... verifica escribir bien la operacion");
+            break;
+        }
+    }
+
+    let num1 = Number.parseInt(prompt("Ingresa numero"));
+    let num2 = Number.parseInt(prompt("Ingresa numero"));
+    let operacion = prompt("Ingresa operacion (suma, resta, multiplicacion, division)");
+
+    calculadora(num1, num2, operacion);
+</script>
+</html>
