@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulacion de estilos</title>
+    <link rel="stylesheet" href="css/style_js_ejercicio2.css">
+</head>
+<body>
+
+    <div class="card">
+        <h2>Cambiar de color de fondo</h2>
+        <div class="buttons">
+            <button class="red">Rojo</button>
+            <button class="green">Verde</button>
+            <button class="blue">Azul</button>
+            <button class="restore">Restablecer</button>
+        </div>
+        <h3>¡Haz clic en un boton para cambiar de color!</h3>
+    </div>
+    
+    <script>
+        const btnRed = document.querySelector('.red');
+        const btnGreen = document.querySelector('.green');
+        const btnBlue = document.querySelector('.blue');
+        const btnRestore = document.querySelector('.restore');
+
+        btnRed.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'red';
+        });
+
+        btnGreen.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'green';
+        });
+
+        btnBlue.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'blue';
+        });
+
+        btnRestore.addEventListener('click', () => {
+            document.body.style.backgroundColor = 'white';
+        });
+    </script>
+</body>
+</html>

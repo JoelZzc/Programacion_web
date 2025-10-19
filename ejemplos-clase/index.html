@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipular DOM</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="titulo">Selectores de Elementos del DOM</h1>
+        <button id="btnModo">Cambiar a Modo Oscuro</button>
+
+        <p class="parrafos">Este es un párrafo con una clase especial y estilos mejorados.</p>
+        <p>Este es otro párrafo sin clase, con estilos generales.</p>
+
+        <ul>
+            <li>Elemento de una lista</li>
+            <li>Otro elemento de una lista</li>
+        </ul>
+
+        <div class="container">
+            <p>Este párrafo está dentro de un contenedor con márgenes y estilos distintos.</p>
+        </div>
+
+        <a href="#" class="link">Enlace 1</a>
+        <a href="#" class="link">Enlace 2</a>
+
+        <img id="imagen" src="" alt="Imagen de prueba">
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+            </tr>
+            <tr>
+                <td>Juan</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>María</td>
+                <td>25</td>
+            </tr>
+        </table>
+
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+            <button type="submit">Enviar</button>
+        </form>
+
+    </div>
+    <script>
+        const titulo = document.getElementById('titulo');
+        titulo.textContent = 'Nuevo texto';
+        titulo.style.color = 'gray';
+        console.log(titulo);
+
+        const parrafos = document.getElementsByClassName('parrafos');
+        for(let i = 0; i < parrafos.length; i++){
+            parrafos[i].style.background = 'gray';
+            parrafos[i].style.color = 'red';
+        }
+
+        const Enlace = document.getElementsByTagName('a');
+        for(let i = 0; i < Enlace.length; i++){
+            Enlace[i].style.textDecoration = 'none';
+        }
+
+        const primerLi = document.querySelector('ul li');
+        console.log(primerLi);
+
+        const celdas = document.querySelectorAll('td');
+        console.log(celdas);
+
+        const contenedorP= document.querySelector('.container p');
+        console.log(contenedorP);
+
+        const imagen = document.getElementById('imagen');
+        
+
+    </script>
+</body>
+
+</html>
