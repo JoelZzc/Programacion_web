@@ -24,7 +24,7 @@
  
 * [01: Calculadora](/html/js_ejercicio1.html)
 * [02: Manipulacion de estilos](/html/js_ejercicio2.html)
-* 
+* [03: Calculadora visual](/js-ejercicios/index.html)
 * 
 
 ### Servidores

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora visual</title>
+    <style>
+        body {
+            font-family: monospace, sans-serif;
+            background-color: #686693;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .calculator, .history {
+            background: rgb(251, 251, 251);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 240px;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            padding-right: 10px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            gap: 10px;
+        }
+
+        button {
+            height: 60px;
+            font-size: 20px;
+            background: #da51ef;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .history h2 {
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <p>Usa el teclado o haz clic en los botones.</p>
+
+    <div class="container">
+        <div class="calculator">
+            <input type="text" id="display" readonly>
+            <div class="buttons" id="buttons"></div>
+            <p id="error" class="error"></p>
+        </div>
+
+        <div class="history">
+            <h2>Historial de cálculos</h2>
+            <div id="history-list"></div>
+        </div>
+    </div>
+
+    <script>
+        const buttons = ['7','8','9','/','4','5','6','*','1','2','3','-','0','=','C','+'];
+        const display = document.getElementById('display');
+        const container = document.getElementById('buttons');
+        const historyList = document.getElementById('history-list');
+        const errorMsg = document.getElementById('error');
+
+        buttons.forEach(symbol => {
+        const btn = document.createElement('button');
+        btn.textContent = symbol;
+        btn.addEventListener('click', () => handleInput(symbol));
+            container.appendChild(btn);
+        });
+
+        document.addEventListener('keydown', e => {
+        const key = e.key;
+        if (/[\d\+\-\*\/]/.test(key)) handleInput(key);
+            else if (key === 'Enter') handleInput('=');
+            else if (key.toLowerCase() === 'c') handleInput('C');
+        });
+
+        function handleInput(input) {
+            errorMsg.textContent = '';
+            if (input === 'C') {
+                display.value = '';
+                return;
+            }
+
+            if (input === '=') {
+                try {
+                    if (display.value.trim() === '') return;
+                    const result = eval(display.value);
+                    if (isNaN(result) || !isFinite(result)) throw new Error();
+                    historyList.innerHTML += `<p>${display.value} = ${result}</p>`;
+                    display.value = result;
+                } catch {
+                    errorMsg.textContent = 'Error: operación no válida';
+                }
+            } else {
+                display.value += input;
+            }
+        }
+    </script>
+</body>
+</html>
