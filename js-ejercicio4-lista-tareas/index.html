@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+
+    <style>
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h2>Mi lista de tareas</h2>
+
+    <div id="container">
+        <ul id="to-do-list">
+        </ul>
+
+
+        <div id="add-task">
+            <input type="text" id="task">
+            <button id="btn-add">Agregar</button>
+        </div>
+    </div>
+
+
+    <script>
+        const toDoList = document.getElementById('to-do-list');
+        const task = document.getElementById('task')
+        const btnAdd = document.getElementById('btn-add');
+        let tasks=[];
+
+        window.onload = function() {
+            updateTask();
+        };
+
+        btnAdd.addEventListener('click', () => {
+            const taskName = task.value;
+            if (taskName === '') return;
+
+            const newTask = {
+                id: Date.now(),
+                name: taskName,
+                done: false
+            };
+
+            tasks.push(newTask);
+            saveTasks();
+            renderTask(newTask);
+
+            task.value = '';
+        });
+
+        function renderTask(t) {
+            const li = document.createElement('li');
+            li.dataset.id = t.id;
+
+            const checkbox = document.createElement('input');
+            const btnDelete = document.createElement('button');
+            const text = document.createTextNode(' ' + t.name + ' ');
+
+            checkbox.type = 'checkbox';
+            checkbox.checked = t.done;
+            btnDelete.textContent = 'Eliminar';
+
+            if (t.done) li.classList.add('done');
+
+            checkbox.addEventListener('change', (e) => {
+                const id = parseInt(li.dataset.id);
+                const taskFound = tasks.find(task => task.id === id);
+                taskFound.done = e.target.checked;
+                if (e.target.checked) {
+                    li.classList.add('done');
+                } else {
+                    li.classList.remove('done');
+                }
+                saveTasks();
+            });
+
+            btnDelete.addEventListener('click', () => {
+                const id = parseInt(li.dataset.id);
+                tasks = tasks.filter(task => task.id !== id);
+                li.remove();
+                saveTasks();
+            });
+
+            li.appendChild(checkbox);
+            li.appendChild(text);
+            li.appendChild(btnDelete);
+            toDoList.appendChild(li);
+        }
+
+        function updateTask() {
+            const data = localStorage.getItem('tasks');
+            if (data) {
+                tasks = JSON.parse(data);
+                tasks.forEach(t => renderTask(t));
+            }
+        }
+
+        function saveTasks() {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+
+        window.onload = function() {
+            updateTask();
+        }
+
+    </script>
+</body>
+</html>
