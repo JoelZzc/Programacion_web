@@ -83,48 +83,6 @@
         </div>
     </div>
 
-    <script>
-        const buttons = ['7','8','9','/','4','5','6','*','1','2','3','-','0','=','C','+'];
-        const display = document.getElementById('display');
-        const container = document.getElementById('buttons');
-        const historyList = document.getElementById('history-list');
-        const errorMsg = document.getElementById('error');
-
-        buttons.forEach(symbol => {
-        const btn = document.createElement('button');
-        btn.textContent = symbol;
-        btn.addEventListener('click', () => handleInput(symbol));
-            container.appendChild(btn);
-        });
-
-        document.addEventListener('keydown', e => {
-        const key = e.key;
-        if (/[\d\+\-\*\/]/.test(key)) handleInput(key);
-            else if (key === 'Enter') handleInput('=');
-            else if (key.toLowerCase() === 'c') handleInput('C');
-        });
-
-        function handleInput(input) {
-            errorMsg.textContent = '';
-            if (input === 'C') {
-                display.value = '';
-                return;
-            }
-
-            if (input === '=') {
-                try {
-                    if (display.value.trim() === '') return;
-                    const result = eval(display.value);
-                    if (isNaN(result) || !isFinite(result)) throw new Error();
-                    historyList.innerHTML += `<p>${display.value} = ${result}</p>`;
-                    display.value = result;
-                } catch {
-                    errorMsg.textContent = 'Error: operación no válida';
-                }
-            } else {
-                display.value += input;
-            }
-        }
-    </script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
