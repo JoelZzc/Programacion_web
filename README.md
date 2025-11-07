@@ -25,7 +25,8 @@
 * [01: Calculadora](/html/js_ejercicio1.html)
 * [02: Manipulacion de estilos](/html/js_ejercicio2.html)
 * [03: Calculadora visual](/js-ejercicios/index.html)
-* [03: Lista de tareas](/js-ejercicio4-lista-tareas/index.html)
+* [04: Lista de tareas](/js-ejercicio4-lista-tareas/index.html)
+* [05: Api gatos](/js-asincrono/index.html)
 
 ### Servidores
 
